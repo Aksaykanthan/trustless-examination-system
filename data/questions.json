@@ -1,85 +1,85 @@
-[{
-  "question": "Find the number of divisors of 1728.",
-  "options": [
-    "18",
-    "30",
-    "28",
-    "20"
-  ],
-  "answer": "28"
-},
-{
-  "question": "Find the maximum value of n such that 157! is perfectly divisible by 10ⁿ.",
-  "options": [
-    "37",
-    "38",
-    "36",
-    "35"
-  ],
-  "answer": "38"
-},
-{
-  "question": "Find the maximum power of 18 in 200!.",
-  "options": [
-    "90",
-    "38",
-    "11",
-    "48"
-  ],
-  "answer": "48"
-},
-{
-  "question": "Find the number of zeroes at the end of 48!.",
-  "options": [
-    "9",
-    "10",
-    "11",
-    "12"
-  ],
-  "answer": "10"
-},
-{
-  "question": "The rightmost non-zero digit of the number 30²⁷²⁰ is:",
-  "options": [
-    "1",
-    "3",
-    "7",
-    "9"
-  ],
-  "answer": "1"
-},
-{
-  "question": "Find the units digit of the expression 11¹ + 12² + 13³ + 14⁴ + 15⁵ + 16⁶.",
-  "options": [
-    "1",
-    "9",
-    "7",
-    "0"
-  ],
-  "answer": "9"
-},
-{
-  "question": "The units digit of the expression 127⁸¹³ × 553⁷⁷⁰³ × 453²⁸²⁸ is:",
-  "options": [
-    "4",
-    "2",
-    "0",
-    "6"
-  ],
-  "answer": "4"
-},
-{
-  "question": "A boy took a seven-digit number ending in 9 and raised it to an even power greater than 2000. He then took the number 17 and raised it to a power which leaves the remainder 1 when divided by 4. If he now multiplies both the numbers, what will be the unit's digit of the number he obtains?",
-  "options": [
-    "7",
-    "9",
-    "3",
-    "Cannot be determined"
-  ],
-  "answer": "7"
-},
-
-{
+[
+  {
+    "question": "Find the number of divisors of 1728.",
+    "options": [
+      "18",
+      "30",
+      "28",
+      "20"
+    ],
+    "answer": "28"
+  },
+  {
+    "question": "Find the maximum value of n such that 157! is perfectly divisible by 10ⁿ.",
+    "options": [
+      "37",
+      "38",
+      "36",
+      "35"
+    ],
+    "answer": "38"
+  },
+  {
+    "question": "Find the maximum power of 18 in 200!.",
+    "options": [
+      "90",
+      "38",
+      "11",
+      "48"
+    ],
+    "answer": "48"
+  },
+  {
+    "question": "Find the number of zeroes at the end of 48!.",
+    "options": [
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "answer": "10"
+  },
+  {
+    "question": "The rightmost non-zero digit of the number 30²⁷²⁰ is:",
+    "options": [
+      "1",
+      "3",
+      "7",
+      "9"
+    ],
+    "answer": "1"
+  },
+  {
+    "question": "Find the units digit of the expression 11¹ + 12² + 13³ + 14⁴ + 15⁵ + 16⁶.",
+    "options": [
+      "1",
+      "9",
+      "7",
+      "0"
+    ],
+    "answer": "9"
+  },
+  {
+    "question": "The units digit of the expression 127⁸¹³ × 553⁷⁷⁰³ × 453²⁸²⁸ is:",
+    "options": [
+      "4",
+      "2",
+      "0",
+      "6"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "A boy took a seven-digit number ending in 9 and raised it to an even power greater than 2000. He then took the number 17 and raised it to a power which leaves the remainder 1 when divided by 4. If he now multiplies both the numbers, what will be the unit's digit of the number he obtains?",
+    "options": [
+      "7",
+      "9",
+      "3",
+      "Cannot be determined"
+    ],
+    "answer": "7"
+  },
+  {
     "question": "A hundred and twenty digit number is formed by writing the first x natural numbers in front of each other as 12345678910111213.... Find the remainder when this number is divided by 8.",
     "options": [
       "6",
@@ -179,487 +179,444 @@
     ],
     "answer": "53"
   },
-
-
-    {
-      "question": "If \\(\\frac{x}{y} = \\frac{8}{9}\\) then \\(\\frac{5x - 4y}{3x + 2y}\\) is",
-      "options": [
-        "21: 2",
-        "21: 13",
-        "2: 21",
-        "13: 21"
-      ],
-      "answer": "2: 21"
-    },
-    {
-      "question": "If A: B = 2: 3 and B: C = 4: 5 then C: A is",
-      "options": [
-        "15: 8",
-        "12: 10",
-        "8: 5",
-        "8: 15"
-      ],
-      "answer": "15: 8"
-    },
-    {
-      "question": "The third proportional to 1 and 2 is",
-      "options": [
-        "2",
-        "3",
-        "4",
-        "1"
-      ],
-      "answer": "4"
-    },
-    {
-      "question": "The fourth proportional to 12, 14, and 18 is?",
-      "options": [
-        "21",
-        "20",
-        "22",
-        "28/3"
-      ],
-      "answer": "21"
-    },
-    {
-      "question": "The difference between two positive numbers is 10 and the ratio between them is 5: 3. Find the product of the two numbers.",
-      "options": [
-        "375",
-        "175",
-        "275",
-        "125"
-      ],
-      "answer": "375"
-    },
-    {
-      "question": "Two numbers are in the ratio 3: 5. If 9 is subtracted from each, the new numbers are in the ratio 12: 23. The product of the two numbers is:",
-      "options": [
-        "1875",
-        "33396",
-        "1815",
-        "33296"
-      ],
-      "answer": "1875"
-    },
-    {
-      "question": "Four numbers in the ratio 1: 3: 4: 7 add up to give a sum of 105, find the value of second biggest number.",
-      "options": [
-        "35",
-        "28",
-        "42",
-        "63"
-      ],
-      "answer": "28"
-    },
-    {
-      "question": "After an increment of 7 in both the numerator and denominator, a fraction changes to \\(\\frac{3}{4}\\). Find the original fraction.",
-      "options": [
-        "\\(\\frac{5}{12}\\)",
-        "\\(\\frac{7}{9}\\)",
-        "\\(\\frac{2}{5}\\)",
-        "\\(\\frac{3}{8}\\)"
-      ],
-      "answer": "\\(\\frac{2}{5}\\)"
-    },
-    {
-      "question": "Rs. 53 is divided among Alex, Bella, and Charles such that Alex's share is Rs. 7 more than Bella's share and Bella's share is Rs. 8 more than Charles's share. The ratio of their shares is:",
-      "options": [
-        "16: 9: 18",
-        "25: 18: 10",
-        "18: 25: 10",
-        "15: 8: 30"
-      ],
-      "answer": "25: 18: 10"
-    },
-    {
-      "question": "A bag contains 50 paise, 25 paise and 10 paise coins in the ratio 5: 9: 4 amounting to Rs. 206. The total number of 25 and 10 paise coins is:",
-      "options": [
-        "200",
-        "360",
-        "420",
-        "520"
-      ],
-      "answer": "520"
-    },
-    {
-      "question": "A man has in all Rs. 640 in the denominations of one rupee, five-rupee and ten-rupee notes. The numbers of each type of notes are equal. What is the total number of notes he has?",
-      "options": [
-        "150",
-        "120",
-        "100",
-        "90"
-      ],
-      "answer": "120"
-    },
-    {
-      "question": "If the ratio of the ages of Maya and Chhaya is 6: 5 at present, and fifteen years from now, the ratio will get changed to 9: 8, then find Chhaya's age after four years.",
-      "options": [
-        "24 years",
-        "30 years",
-        "34 years",
-        "29 years"
-      ],
-      "answer": "29 years"
-    },
-    {
-      "question": "The present ratio of ages of Alpha and Beta is 4: 5. 18 years ago, this ratio was 11: 16. Find the sum of their ages 18 years ago.",
-      "options": [
-        "90 years",
-        "54 years",
-        "64 years",
-        "66 years"
-      ],
-      "answer": "54 years"
-    },
-    {
-      "question": "The speeds of three trucks are in the ratio 3: 4: 5. The ratio between the times taken by these cars to travel the same distance is",
-      "options": [
-        "12: 15: 20",
-        "20: 15: 12",
-        "5: 4: 3",
-        "25: 16: 9"
-      ],
-      "answer": "20: 15: 12"
-    },
-    {
-      "question": "If the ratio of sines of angles of a triangle is 1: 1: \\(\\sqrt{2}\\), then the ratio of square of the greatest side to sum of the squares of other two sides is",
-      "options": [
-        "3: 4",
-        "2: 1",
-        "1: 1",
-        "1: 2"
-      ],
-      "answer": "1: 1"
-    },
-    {
-      "question": "Incomes of Abhi and Banu are in the ratio 4: 3 and their annual expenses in the ratio 3: 2. If each save Rs. 60,000 at the end of the year, the annual income of Abhi is:",
-      "options": [
-        "Rs. 1, 20,000",
-        "Rs. 1, 50,000",
-        "Rs. 2, 40,000",
-        "Rs. 3, 60,000"
-      ],
-      "answer": "Rs. 2, 40,000"
-    },
-    {
-      "question": "Anup and Balaji have monthly incomes in the ratio 5: 6 and monthly expenditures in the ratio 3: 4. If they save Rs 1800 and Rs. 1600 respectively, find the monthly income of Balaji?",
-      "options": [
-        "Rs. 3400",
-        "Rs. 2700",
-        "Rs. 1720",
-        "Rs. 7200"
-      ],
-      "answer": "Rs. 7200"
-    },
-
-
-    {
-        "question": "If 25 percent of a number is 10, then what is 75 percent of the number?",
-        "options": [
-          "30",
-          "20",
-          "35",
-          "25"
-        ],
-        "answer": "30"
-      },
-      {
-        "question": "Which of the following is the largest number?",
-        "options": [
-          "40% of 200",
-          "14% of 500",
-          "6% of 1300",
-          "700% of 18"
-        ],
-        "answer": "700% of 18"
-      },
-      {
-        "question": "If 25% of a number is 75, then 45% of that number is:",
-        "options": [
-          "145",
-          "125",
-          "150",
-          "135"
-        ],
-        "answer": "135"
-      },
-      {
-        "question": "What is 70% of 50% of 20% of 75?",
-        "options": [
-          "5.25",
-          "5.75",
-          "6.25",
-          "5.5"
-        ],
-        "answer": "5.25"
-      },
-      {
-        "question": "If A = x% of y and B = y% of x, then which of the following is true?",
-        "options": [
-          "A is smaller than B",
-          "A is greater than B",
-          "If x is smaller than y, then A is greater than B",
-          "None of these"
-        ],
-        "answer": "None of these"
-      },
-      {
-        "question": "Two-fifth of one-third of three-seventh of a number is 15. What is 40% of that number?",
-        "options": [
-          "100",
-          "105",
-          "125",
-          "150"
-        ],
-        "answer": "105"
-      },
-      {
-        "question": "If Ramesh gets 10% more salary than Suresh, then Suresh gets:",
-        "options": [
-          "10% less than Ramesh",
-          "9 1/11% more than Ramesh",
-          "9 1/11% less than Ramesh",
-          "Cannot be determined"
-        ],
-        "answer": "9 1/11% less than Ramesh"
-      },
-      {
-        "question": "A batsman scored 110 runs which included 3 boundaries and 8 sixes. What percent of his total score did he make by running between the wickets?",
-        "options": [
-          "45%",
-          "45 5/11%",
-          "54 6/11%",
-          "55%"
-        ],
-        "answer": "45 5/11%"
-      },
-      {
-        "question": "Anil spends 40% of his income on rent, 30% of the remaining on medicines, and 20% of the remaining on education. If he saves Rs. 840 every month, then find his monthly salary.",
-        "options": [
-          "Rs.1800",
-          "Rs.2000",
-          "Rs.2200",
-          "Rs.2500"
-        ],
-        "answer": "Rs.2500"
-      },
-      {
-        "question": "The profit made by a company in the present year is 20 lakhs. Two years ago, the profit made by the same company was 16 lakhs. What is the percentage change in the profit made by the company?",
-        "options": [
-          "20%",
-          "25%",
-          "33.33%",
-          "None of these"
-        ],
-        "answer": "25%"
-      },
-      {
-        "question": "In a survey of political preferences, 78% of those were in favor of at least one of the proposals: I, II, and III. 50% favored proposal I, 30% favored proposal II, and 20% favored proposal III. If 5% favored all three proposals, what percentage of those asked favored more than one of the three proposals?",
-        "options": [
-          "10",
-          "12",
-          "17",
-          "22"
-        ],
-        "answer": "17"
-      },
-      {
-        "question": "In an election contested by two parties, Party A secured 12% of the total votes more than Party B. If party B got 132,000 votes, by how many votes did it lose the election?",
-        "options": [
-          "30,000",
-          "18,000",
-          "36,000",
-          "24,000"
-        ],
-        "answer": "36,000"
-      },
-      {
-        "question": "A student took five papers in an examination, where the full marks were the same for each paper. His marks in these papers were in the proportion of 6:7:8:9:10. In all papers together, the candidate obtained 60% of the total marks. Then, the number of papers in which he got more than 50% marks is:",
-        "options": [
-          "1",
-          "3",
-          "4",
-          "5"
-        ],
-        "answer": "4"
-      },
-      {
-        "question": "Two tests had the same maximum mark. The pass percentages in the first and the second tests were 40% and 45% respectively. A candidate scored 216 marks in the second test and failed by 36 marks in that test. Find the pass mark in the first test.",
-        "options": [
-          "136",
-          "128",
-          "164",
-          "224"
-        ],
-        "answer": "224"
-      },
-      {
-        "question": "A person who has a certain amount with him goes to market. He can buy 50 oranges or 40 mangoes. He retains 10% of the amount for taxi fares and buys 20 mangoes and of the balance, he purchases oranges. Find the number of oranges he can purchase.",
-        "options": [
-          "36",
-          "40",
-          "15",
-          "20"
-        ],
-        "answer": "20"
-      },
-      {
-        "question": "Water tax is increased by 20% but its consumption is decreased by 20%. Then increase or decrease in the expenditure of the money is:",
-        "options": [
-          "40%",
-          "4%",
-          "96%",
-          "None of the above%"
-        ],
-        "answer": "4%"
-      },
-      {
-        "question": "If the radius of the circle is increased by 5%, then the area is increased by:",
-        "options": [
-          "10.20%",
-          "10.22%",
-          "10.24%",
-          "10.25%"
-        ],
-        "answer": "10.25%"
-      },
-      {
-        "question": "The price of a Maruti car rises by 30% while the sales of the car come down by 20%. What is the percentage change in the total revenue?",
-        "options": [
-          "-4%",
-          "-2%",
-          "+4%",
-          "+2%"
-        ],
-        "answer": "+4%"
-      },
-      {
-        "question": "In an examination, there are 100 questions divided into three groups A, B, and C such that each group contains at least one question. It is known that each question in group A carries 1 mark, each question in group B carries 2 marks, and each question in group C carries 3 marks. It is known that the questions in group A together carry at least 60% of the total marks. If group B contains 23 questions, then how many questions are there in group C?",
-        "options": [
-          "4",
-          "2",
-          "1",
-          "Cannot be determined"
-        ],
-        "answer": "1"
-      },
-      {
-        "question": "The rate of increase of the price of sugar is observed to be two percent more than the inflation expressed in percentage. The price of sugar on January 1, 2017 is Rs. 50 per kg. The inflation rates of the years 2017 and 2018 are expected to be 8% each. The expected price of sugar on January 1, 2019 would be:",
-        "options": [
-          "Rs. 53.50",
-          "Rs. 58.32",
-          "Rs. 60.50",
-          "Rs. 60.60"
-        ],
-        "answer": "Rs. 60.50"
-      },
-      {
-        "question": "If the annual increase in the population of the town is 5% and 10% for 2 successive years and the present population is 28,875, what was it two years ago?",
-        "options": [
-          "25,000",
-          "24,000",
-          "26,450",
-          "26,750"
-        ],
-        "answer": "25,000"
-      },
-      {
-        "question": "If the price of petrol increases by 25% and Raj intends to spend only an additional 15% on petrol, then by what percent will he reduce the quantity of petrol purchased?",
-        "options": [
-          "10%",
-          "12%",
-          "8%",
-          "6.67%"
-        ],
-        "answer": "8%"
-      },
-      {
-        "question": "Fresh grapes contain 90% water by weight while dried grapes contain 20% water by weight. What is the weight of dry grapes available from 20 kg of fresh grapes?",
-        "options": [
-          "2 kg",
-          "2.4 kg",
-          "2.5 kg",
-          "None of these"
-        ],
-        "answer": "2.5 kg"
-      },
-      {
-        "question": "A litre of water is evaporated from 6 litres of sugar solution containing 4% of sugar. Find the percentage of sugar in the remaining solution.",
-        "options": [
-          "3.33",
-          "4.80",
-          "4",
-          "5"
-        ],
-        "answer": "4.80"
-      },
-
-      {
-        "question": "The cost of house rent accounted for 25% of the income of a particular family. If the income gets raised by 20%, then what must be the change in house rent expenditure in percentage point, given that house rent remains unchanged? (approximately)",
-        "options": [
-          "3.5",
-          "8.33",
-          "4.16",
-          "5"
-        ],
-        "answer": "4.16"
-      },
-      {
-        "question": "An empty fuel tank of a car was filled with A type petrol. When the tank was half-empty, it was filled with B type petrol. Again when the tank was half empty, it was filled with A type petrol. When the tank was half-empty again, it was filled with B type petrol. What is the percentage of A type petrol at present in the tank?",
-        "options": [
-          "33.5%",
-          "37.5%",
-          "40%",
-          "50%"
-        ],
-        "answer": "37.5%"
-      },
-      {
-        "question": "At the end of year 2008, S bought nine dozen goats. Henceforth, every year he added p% of the goats at the beginning of the year and sold q% of the goats at the end of the year where p > 0 and q > 0. If S had nine dozen goats at the end of the year 2017, after making the sales for that year, which of the following is true?",
-        "options": [
-          "p = q",
-          "p < q",
-          "p > q",
-          "p = q/2"
-        ],
-        "answer": "p > q"
-      },
-      {
-        "question": "In an examination, Ramesh scored 20% less than Suresh and 20% more than Mahesh. How much percentage is Mahesh’s score less than/more than Suresh’s score?",
-        "options": [
-          "33.33%",
-          "50%",
-          "42.85%",
-          "None of these"
-        ],
-        "answer": "33.33%"
-      },
-      {
-        "question": "A college has raised 75% of the amount it needs for a new building by receiving an average donation of Rs. 600 from the people already solicited. The people already solicited represent 60% of the people the college intended to ask for donations. If the college is to raise exactly the amount needed for the new building, what should be the average donation from the remaining people to be solicited?",
-        "options": [
-          "Rs. 300",
-          "Rs. 250",
-          "Rs. 400",
-          "Rs. 500"
-        ],
-        "answer": "Rs. 300"
-      },
-      {
-        "question": "In an election with 2 candidates P & Q, 5/7 of the voters promise to vote for P and the rest promised to vote for Q. Of these, on the last day 15% of the voters went back of their promise to vote for P and 25% of voters went back of their promise to vote for Q, and P lost by 2 votes. Then, the total number of voters is:",
-        "options": [
-          "100",
-          "110",
-          "90",
-          "95"
-        ],
-        "answer": "100"
-      }
-                                                                   
-      
-      
-      
-      
-  
-  
-  
+  {
+    "question": "If A: B = 2: 3 and B: C = 4: 5 then C: A is",
+    "options": [
+      "15: 8",
+      "12: 10",
+      "8: 5",
+      "8: 15"
+    ],
+    "answer": "15: 8"
+  },
+  {
+    "question": "The third proportional to 1 and 2 is",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "1"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "The fourth proportional to 12, 14, and 18 is?",
+    "options": [
+      "21",
+      "20",
+      "22",
+      "28/3"
+    ],
+    "answer": "21"
+  },
+  {
+    "question": "The difference between two positive numbers is 10 and the ratio between them is 5: 3. Find the product of the two numbers.",
+    "options": [
+      "375",
+      "175",
+      "275",
+      "125"
+    ],
+    "answer": "375"
+  },
+  {
+    "question": "Two numbers are in the ratio 3: 5. If 9 is subtracted from each, the new numbers are in the ratio 12: 23. The product of the two numbers is:",
+    "options": [
+      "1875",
+      "33396",
+      "1815",
+      "33296"
+    ],
+    "answer": "1875"
+  },
+  {
+    "question": "Four numbers in the ratio 1: 3: 4: 7 add up to give a sum of 105, find the value of second biggest number.",
+    "options": [
+      "35",
+      "28",
+      "42",
+      "63"
+    ],
+    "answer": "28"
+  },
+  {
+    "question": "Rs. 53 is divided among Alex, Bella, and Charles such that Alex's share is Rs. 7 more than Bella's share and Bella's share is Rs. 8 more than Charles's share. The ratio of their shares is:",
+    "options": [
+      "16: 9: 18",
+      "25: 18: 10",
+      "18: 25: 10",
+      "15: 8: 30"
+    ],
+    "answer": "25: 18: 10"
+  },
+  {
+    "question": "A bag contains 50 paise, 25 paise and 10 paise coins in the ratio 5: 9: 4 amounting to Rs. 206. The total number of 25 and 10 paise coins is:",
+    "options": [
+      "200",
+      "360",
+      "420",
+      "520"
+    ],
+    "answer": "520"
+  },
+  {
+    "question": "A man has in all Rs. 640 in the denominations of one rupee, five-rupee and ten-rupee notes. The numbers of each type of notes are equal. What is the total number of notes he has?",
+    "options": [
+      "150",
+      "120",
+      "100",
+      "90"
+    ],
+    "answer": "120"
+  },
+  {
+    "question": "If the ratio of the ages of Maya and Chhaya is 6: 5 at present, and fifteen years from now, the ratio will get changed to 9: 8, then find Chhaya's age after four years.",
+    "options": [
+      "24 years",
+      "30 years",
+      "34 years",
+      "29 years"
+    ],
+    "answer": "29 years"
+  },
+  {
+    "question": "The present ratio of ages of Alpha and Beta is 4: 5. 18 years ago, this ratio was 11: 16. Find the sum of their ages 18 years ago.",
+    "options": [
+      "90 years",
+      "54 years",
+      "64 years",
+      "66 years"
+    ],
+    "answer": "54 years"
+  },
+  {
+    "question": "The speeds of three trucks are in the ratio 3: 4: 5. The ratio between the times taken by these cars to travel the same distance is",
+    "options": [
+      "12: 15: 20",
+      "20: 15: 12",
+      "5: 4: 3",
+      "25: 16: 9"
+    ],
+    "answer": "20: 15: 12"
+  },
+  {
+    "question": "Incomes of Abhi and Banu are in the ratio 4: 3 and their annual expenses in the ratio 3: 2. If each save Rs. 60,000 at the end of the year, the annual income of Abhi is:",
+    "options": [
+      "Rs. 1, 20,000",
+      "Rs. 1, 50,000",
+      "Rs. 2, 40,000",
+      "Rs. 3, 60,000"
+    ],
+    "answer": "Rs. 2, 40,000"
+  },
+  {
+    "question": "Anup and Balaji have monthly incomes in the ratio 5: 6 and monthly expenditures in the ratio 3: 4. If they save Rs 1800 and Rs. 1600 respectively, find the monthly income of Balaji?",
+    "options": [
+      "Rs. 3400",
+      "Rs. 2700",
+      "Rs. 1720",
+      "Rs. 7200"
+    ],
+    "answer": "Rs. 7200"
+  },
+  {
+    "question": "If 25 percent of a number is 10, then what is 75 percent of the number?",
+    "options": [
+      "30",
+      "20",
+      "35",
+      "25"
+    ],
+    "answer": "30"
+  },
+  {
+    "question": "Which of the following is the largest number?",
+    "options": [
+      "40% of 200",
+      "14% of 500",
+      "6% of 1300",
+      "700% of 18"
+    ],
+    "answer": "700% of 18"
+  },
+  {
+    "question": "If 25% of a number is 75, then 45% of that number is:",
+    "options": [
+      "145",
+      "125",
+      "150",
+      "135"
+    ],
+    "answer": "135"
+  },
+  {
+    "question": "What is 70% of 50% of 20% of 75?",
+    "options": [
+      "5.25",
+      "5.75",
+      "6.25",
+      "5.5"
+    ],
+    "answer": "5.25"
+  },
+  {
+    "question": "If A = x% of y and B = y% of x, then which of the following is true?",
+    "options": [
+      "A is smaller than B",
+      "A is greater than B",
+      "If x is smaller than y, then A is greater than B",
+      "None of these"
+    ],
+    "answer": "None of these"
+  },
+  {
+    "question": "Two-fifth of one-third of three-seventh of a number is 15. What is 40% of that number?",
+    "options": [
+      "100",
+      "105",
+      "125",
+      "150"
+    ],
+    "answer": "105"
+  },
+  {
+    "question": "If Ramesh gets 10% more salary than Suresh, then Suresh gets:",
+    "options": [
+      "10% less than Ramesh",
+      "9 1/11% more than Ramesh",
+      "9 1/11% less than Ramesh",
+      "Cannot be determined"
+    ],
+    "answer": "9 1/11% less than Ramesh"
+  },
+  {
+    "question": "A batsman scored 110 runs which included 3 boundaries and 8 sixes. What percent of his total score did he make by running between the wickets?",
+    "options": [
+      "45%",
+      "45 5/11%",
+      "54 6/11%",
+      "55%"
+    ],
+    "answer": "45 5/11%"
+  },
+  {
+    "question": "Anil spends 40% of his income on rent, 30% of the remaining on medicines, and 20% of the remaining on education. If he saves Rs. 840 every month, then find his monthly salary.",
+    "options": [
+      "Rs.1800",
+      "Rs.2000",
+      "Rs.2200",
+      "Rs.2500"
+    ],
+    "answer": "Rs.2500"
+  },
+  {
+    "question": "The profit made by a company in the present year is 20 lakhs. Two years ago, the profit made by the same company was 16 lakhs. What is the percentage change in the profit made by the company?",
+    "options": [
+      "20%",
+      "25%",
+      "33.33%",
+      "None of these"
+    ],
+    "answer": "25%"
+  },
+  {
+    "question": "In a survey of political preferences, 78% of those were in favor of at least one of the proposals: I, II, and III. 50% favored proposal I, 30% favored proposal II, and 20% favored proposal III. If 5% favored all three proposals, what percentage of those asked favored more than one of the three proposals?",
+    "options": [
+      "10",
+      "12",
+      "17",
+      "22"
+    ],
+    "answer": "17"
+  },
+  {
+    "question": "In an election contested by two parties, Party A secured 12% of the total votes more than Party B. If party B got 132,000 votes, by how many votes did it lose the election?",
+    "options": [
+      "30,000",
+      "18,000",
+      "36,000",
+      "24,000"
+    ],
+    "answer": "36,000"
+  },
+  {
+    "question": "A student took five papers in an examination, where the full marks were the same for each paper. His marks in these papers were in the proportion of 6:7:8:9:10. In all papers together, the candidate obtained 60% of the total marks. Then, the number of papers in which he got more than 50% marks is:",
+    "options": [
+      "1",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer": "4"
+  },
+  {
+    "question": "Two tests had the same maximum mark. The pass percentages in the first and the second tests were 40% and 45% respectively. A candidate scored 216 marks in the second test and failed by 36 marks in that test. Find the pass mark in the first test.",
+    "options": [
+      "136",
+      "128",
+      "164",
+      "224"
+    ],
+    "answer": "224"
+  },
+  {
+    "question": "A person who has a certain amount with him goes to market. He can buy 50 oranges or 40 mangoes. He retains 10% of the amount for taxi fares and buys 20 mangoes and of the balance, he purchases oranges. Find the number of oranges he can purchase.",
+    "options": [
+      "36",
+      "40",
+      "15",
+      "20"
+    ],
+    "answer": "20"
+  },
+  {
+    "question": "Water tax is increased by 20% but its consumption is decreased by 20%. Then increase or decrease in the expenditure of the money is:",
+    "options": [
+      "40%",
+      "4%",
+      "96%",
+      "None of the above%"
+    ],
+    "answer": "4%"
+  },
+  {
+    "question": "If the radius of the circle is increased by 5%, then the area is increased by:",
+    "options": [
+      "10.20%",
+      "10.22%",
+      "10.24%",
+      "10.25%"
+    ],
+    "answer": "10.25%"
+  },
+  {
+    "question": "The price of a Maruti car rises by 30% while the sales of the car come down by 20%. What is the percentage change in the total revenue?",
+    "options": [
+      "-4%",
+      "-2%",
+      "+4%",
+      "+2%"
+    ],
+    "answer": "+4%"
+  },
+  {
+    "question": "In an examination, there are 100 questions divided into three groups A, B, and C such that each group contains at least one question. It is known that each question in group A carries 1 mark, each question in group B carries 2 marks, and each question in group C carries 3 marks. It is known that the questions in group A together carry at least 60% of the total marks. If group B contains 23 questions, then how many questions are there in group C?",
+    "options": [
+      "4",
+      "2",
+      "1",
+      "Cannot be determined"
+    ],
+    "answer": "1"
+  },
+  {
+    "question": "The rate of increase of the price of sugar is observed to be two percent more than the inflation expressed in percentage. The price of sugar on January 1, 2017 is Rs. 50 per kg. The inflation rates of the years 2017 and 2018 are expected to be 8% each. The expected price of sugar on January 1, 2019 would be:",
+    "options": [
+      "Rs. 53.50",
+      "Rs. 58.32",
+      "Rs. 60.50",
+      "Rs. 60.60"
+    ],
+    "answer": "Rs. 60.50"
+  },
+  {
+    "question": "If the annual increase in the population of the town is 5% and 10% for 2 successive years and the present population is 28,875, what was it two years ago?",
+    "options": [
+      "25,000",
+      "24,000",
+      "26,450",
+      "26,750"
+    ],
+    "answer": "25,000"
+  },
+  {
+    "question": "If the price of petrol increases by 25% and Raj intends to spend only an additional 15% on petrol, then by what percent will he reduce the quantity of petrol purchased?",
+    "options": [
+      "10%",
+      "12%",
+      "8%",
+      "6.67%"
+    ],
+    "answer": "8%"
+  },
+  {
+    "question": "Fresh grapes contain 90% water by weight while dried grapes contain 20% water by weight. What is the weight of dry grapes available from 20 kg of fresh grapes?",
+    "options": [
+      "2 kg",
+      "2.4 kg",
+      "2.5 kg",
+      "None of these"
+    ],
+    "answer": "2.5 kg"
+  },
+  {
+    "question": "A litre of water is evaporated from 6 litres of sugar solution containing 4% of sugar. Find the percentage of sugar in the remaining solution.",
+    "options": [
+      "3.33",
+      "4.80",
+      "4",
+      "5"
+    ],
+    "answer": "4.80"
+  },
+  {
+    "question": "The cost of house rent accounted for 25% of the income of a particular family. If the income gets raised by 20%, then what must be the change in house rent expenditure in percentage point, given that house rent remains unchanged? (approximately)",
+    "options": [
+      "3.5",
+      "8.33",
+      "4.16",
+      "5"
+    ],
+    "answer": "4.16"
+  },
+  {
+    "question": "An empty fuel tank of a car was filled with A type petrol. When the tank was half-empty, it was filled with B type petrol. Again when the tank was half empty, it was filled with A type petrol. When the tank was half-empty again, it was filled with B type petrol. What is the percentage of A type petrol at present in the tank?",
+    "options": [
+      "33.5%",
+      "37.5%",
+      "40%",
+      "50%"
+    ],
+    "answer": "37.5%"
+  },
+  {
+    "question": "At the end of year 2008, S bought nine dozen goats. Henceforth, every year he added p% of the goats at the beginning of the year and sold q% of the goats at the end of the year where p > 0 and q > 0. If S had nine dozen goats at the end of the year 2017, after making the sales for that year, which of the following is true?",
+    "options": [
+      "p = q",
+      "p < q",
+      "p > q",
+      "p = q/2"
+    ],
+    "answer": "p > q"
+  },
+  {
+    "question": "In an examination, Ramesh scored 20% less than Suresh and 20% more than Mahesh. How much percentage is Mahesh’s score less than/more than Suresh’s score?",
+    "options": [
+      "33.33%",
+      "50%",
+      "42.85%",
+      "None of these"
+    ],
+    "answer": "33.33%"
+  },
+  {
+    "question": "A college has raised 75% of the amount it needs for a new building by receiving an average donation of Rs. 600 from the people already solicited. The people already solicited represent 60% of the people the college intended to ask for donations. If the college is to raise exactly the amount needed for the new building, what should be the average donation from the remaining people to be solicited?",
+    "options": [
+      "Rs. 300",
+      "Rs. 250",
+      "Rs. 400",
+      "Rs. 500"
+    ],
+    "answer": "Rs. 300"
+  },
+  {
+    "question": "In an election with 2 candidates P & Q, 5/7 of the voters promise to vote for P and the rest promised to vote for Q. Of these, on the last day 15% of the voters went back of their promise to vote for P and 25% of voters went back of their promise to vote for Q, and P lost by 2 votes. Then, the total number of voters is:",
+    "options": [
+      "100",
+      "110",
+      "90",
+      "95"
+    ],
+    "answer": "100"
+  }
 ]

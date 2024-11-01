@@ -1,0 +1,82 @@
+[
+    {
+        "UserId": "5a477e8e84174efeae8013e90f6558e9",
+        "QuestionId": "11dc43943cb343c1a0c2c709f4bd0224",
+        "OptionId": "598c1fe662944aa5bc2015fe2d6cce50",
+        "Time": "2024-10-28 01:43:49.102132",
+        "PublicKey": 7,
+        "N": 9797
+    },
+    {
+        "UserId": "3a304a941f2745fd91ef16bbaad53000",
+        "QuestionId": "ae10018a09df4a309fab8f15df780c60",
+        "OptionId": "f08dd5f6131c4680947f69c281a88bc9",
+        "Time": "2024-10-28 01:43:49.114164",
+        "PublicKey": 3,
+        "N": 2839
+    },
+    {
+        "UserId": "5a477e8e84174efeae8013e90f6558e9",
+        "QuestionId": "11dc43943cb343c1a0c2c709f4bd0224",
+        "OptionId": "598c1fe662944aa5bc2015fe2d6cce50",
+        "Time": "2024-10-28 01:43:49.121162",
+        "PublicKey": 5,
+        "N": 721
+    },
+    {
+        "UserId": "fd6915ce388c45968b53feae66a7b963",
+        "QuestionId": "11dc43943cb343c1a0c2c709f4bd0224",
+        "OptionId": "4a8a1a6c8efb425b9383b3538fd558ba",
+        "Time": "2024-10-28 01:43:49.122125",
+        "PublicKey": 5,
+        "N": 10877
+    },
+    {
+        "UserId": "d19f6a3af9a74e7d93576ff714d04a99",
+        "QuestionId": "9dea9879b90f4ab7b212c3a4db3f50fa",
+        "OptionId": "7e42e1daac3444be9887561f41083837",
+        "Time": "2024-10-28 01:43:49.152343",
+        "PublicKey": 5,
+        "N": 24617
+    },
+    {
+        "UserId": "7f79c3a57aa64237bc4cd2772867d8be",
+        "QuestionId": "22e9641a02c844148f7a08b6057dfdf5",
+        "OptionId": "01f94c9cb2f6438b8adccb8717c07ec0",
+        "Time": "2024-10-28 01:43:49.219095",
+        "PublicKey": 3,
+        "N": 7831
+    },
+    {
+        "UserId": "dbdee2530c134b0eae8abd670cb42ca9",
+        "QuestionId": "ae10018a09df4a309fab8f15df780c60",
+        "OptionId": "6946b3998e5e465d88e24d9ecacef260",
+        "Time": "2024-10-28 01:43:49.236602",
+        "PublicKey": 7,
+        "N": 1891
+    },
+    {
+        "UserId": "dbdee2530c134b0eae8abd670cb42ca9",
+        "QuestionId": "22e9641a02c844148f7a08b6057dfdf5",
+        "OptionId": "cdf14a3420c847ceb9a0c3ac8e324e0f",
+        "Time": "2024-10-28 01:43:49.241987",
+        "PublicKey": 5,
+        "N": 15811
+    },
+    {
+        "UserId": "a1c70da932434463b080ee7562aec9f2",
+        "QuestionId": "ae10018a09df4a309fab8f15df780c60",
+        "OptionId": "6946b3998e5e465d88e24d9ecacef260",
+        "Time": "2024-10-28 01:43:49.263531",
+        "PublicKey": 5,
+        "N": 1691
+    },
+    {
+        "UserId": "fd6915ce388c45968b53feae66a7b963",
+        "QuestionId": "bcadafa0b0ae47d18c702e2c1c32a13e",
+        "OptionId": "bbd2e595a8c64afcbb854714f21f8d0a",
+        "Time": "2024-10-28 01:43:49.264647",
+        "PublicKey": 3,
+        "N": 8851
+    }
+]
