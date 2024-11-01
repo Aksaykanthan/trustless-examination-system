@@ -9,7 +9,8 @@ filepath = 'data/students.json'
 def create_student():
     return {
         "name" : names.get_full_name(),
-        "id" : uuid.uuid4().hex
+        "id" : uuid.uuid4().hex,
+        "rollno": random.randint(100000,200000)
     }
 
 def create_students(n):
