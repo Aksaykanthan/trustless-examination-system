@@ -4,8 +4,9 @@ import uuid
 import random
 import os
 import base64 
-from symmetric_encrypt import do_encrypt, encrypt, decrypt
-from shamirs_secret import ShamirSecret, reconstruct_secret
+from functionalities.shamirs_secret import ShamirSecret, reconstruct_secret
+from functionalities.symmetric_encrypt import do_encrypt, encrypt, decrypt
+
 
 class Organisers:
     def __init__(self, centre_name,path="data/organisers.json"):
@@ -67,6 +68,8 @@ class Organisers:
         if self.key == 0:
             encrypted_question, self.key = do_encrypt(question["question"], self.id)
             q["question"] = self.encode_to_string(encrypted_question)
+            print("keyedd\n")
+            print(self.key)
         else:
             encrypted_question = encrypt(question["question"], self.key)
             q["question"] = self.encode_to_string(encrypted_question)
@@ -117,7 +120,7 @@ class Organisers:
         for i in range(self.organisers_count):
             organisers[i]["keys"].append({"centre": self.centre_name, "share": shares[i]})
         
-        with open("data/organisers.json", 'w') as f:
+        with open(path, 'w') as f:
             json.dump(organisers, f, indent=4)
 
     def decrypt_with_shamir(self,path="data/"):
@@ -136,6 +139,8 @@ class Organisers:
             # Convert the reconstructed integer back to bytes, ensuring 32 bytes (for AES-256)
             reconstructed_key_bytes = reconstructed_key_int.to_bytes(32, byteorder='big')
             self.key = reconstructed_key_bytes  # Update key with the reconstructed byte key
+            print("\nKeyy\n")
+            print(self.key)
 
             # Now decrypt questions for this center
             self.getQuestions(path)
@@ -148,8 +153,10 @@ def final_format(data):
     for keys,values in data.items():
         org = Organisers(keys,"live_data/organisers.json")
         org.final_addQuestions(values)
-        org.do_shamir("live_data/organisers.json")
         organisers.append(org)
+
+    for organiser in organisers:
+        organiser.do_shamir("live_data/organisers.json")
 
     return organisers
 

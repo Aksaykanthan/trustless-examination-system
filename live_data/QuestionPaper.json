@@ -1,0 +1,171 @@
+{
+    "1": [
+        {
+            "questionId": "4c5bfe70045944fc9b5473efed28616f",
+            "question": "If 25 percent of a number is 10, then what is 75 percent of the number?",
+            "options": [
+                {
+                    "option": "30",
+                    "optionId": "99802f13aa6c4239914d6493cf60f88c"
+                },
+                {
+                    "option": "20",
+                    "optionId": "6169d18127b24288accb95ec848a8cec"
+                },
+                {
+                    "option": "25",
+                    "optionId": "ea0a54cc85f84318922b2778cda84a2f"
+                },
+                {
+                    "option": "35",
+                    "optionId": "7c4437f1b82e4d03b75bbfcc1043785d"
+                }
+            ],
+            "answer": "99802f13aa6c4239914d6493cf60f88c"
+        },
+        {
+            "questionId": "c15aef9a965349bda858b3dbd96855cc",
+            "question": "Which of the following is the largest number?",
+            "options": [
+                {
+                    "option": "40% of 200",
+                    "optionId": "a65f000943dc48c1942e031cb1c20eb3"
+                },
+                {
+                    "option": "14% of 500",
+                    "optionId": "8a8e0b273c35489d9bcf2d59a4029d61"
+                },
+                {
+                    "option": "6% of 1300",
+                    "optionId": "545e438238ae46ebb7b2b4b7d367d350"
+                },
+                {
+                    "option": "700% of 18",
+                    "optionId": "a17a536690634d7ab0a96de1467c21d5"
+                }
+            ],
+            "answer": "a17a536690634d7ab0a96de1467c21d5"
+        }
+    ],
+    "2": [
+        {
+            "questionId": "0a25afbcbe5a407e926c72cfd7b3a8ef",
+            "question": "If 25% of a number is 75, then 45% of that number is:",
+            "options": [
+                {
+                    "option": "145",
+                    "optionId": "338caea1632b4394aec6cd1c27ef3c90"
+                },
+                {
+                    "option": "125",
+                    "optionId": "0adf53fcc735426d86eb05f158959f59"
+                },
+                {
+                    "option": "150",
+                    "optionId": "d48d3f645439474d9565198f206a362b"
+                },
+                {
+                    "option": "135",
+                    "optionId": "54ca2bee6d3b48ce87904bf9915f59b6"
+                }
+            ],
+            "answer": "54ca2bee6d3b48ce87904bf9915f59b6"
+        },
+        {
+            "questionId": "132ce71d3b1c4b6e9c5dfb511a26038d",
+            "question": "What is 70% of 50% of 20% of 75?",
+            "options": [
+                {
+                    "option": "5.25",
+                    "optionId": "5914e06c95db4dd3afcc9133012cbb70"
+                },
+                {
+                    "option": "5.75",
+                    "optionId": "4d20114190884682a20b9bc4f847670f"
+                },
+                {
+                    "option": "6.25",
+                    "optionId": "007460b487554faa9605610e07b1bbf3"
+                },
+                {
+                    "option": "5.5",
+                    "optionId": "6c0405593abb443390b7bf145ba8404c"
+                }
+            ],
+            "answer": "5914e06c95db4dd3afcc9133012cbb70"
+        }
+    ],
+    "3": [
+        {
+            "questionId": "a998d471505644a2a4382bb0c4287bd2",
+            "question": "If Ramesh gets 10% more salary than Suresh, then Suresh gets:",
+            "options": [
+                {
+                    "option": "10% less than Ramesh",
+                    "optionId": "a32faaa547bc40e3b8feb90c915e958c"
+                },
+                {
+                    "option": "9 1/11% more than Ramesh",
+                    "optionId": "e8a0a4b99532474993ff121c9a4addd3"
+                },
+                {
+                    "option": "9 1/11% less than Ramesh",
+                    "optionId": "1f07be055735431680ff086107b8e8cc"
+                },
+                {
+                    "option": "Cannot be determined",
+                    "optionId": "0d02acdffbad4f3492a7d198426507c4"
+                }
+            ],
+            "answer": "1f07be055735431680ff086107b8e8cc"
+        }
+    ],
+    "4": [
+        {
+            "questionId": "23f55bd101354d41ba17da014d80eeb6",
+            "question": "If the radius of the circle is increased by 5%, then the area is increased by:",
+            "options": [
+                {
+                    "option": "10.20%",
+                    "optionId": "80e85dc8d44547169f8532e81f4306c9"
+                },
+                {
+                    "option": "10.22%",
+                    "optionId": "7f1648d9fe6f4a189b1d8fdd60094c09"
+                },
+                {
+                    "option": "10.24%",
+                    "optionId": "e57870dfbe324770b3dd5148cef43eaf"
+                },
+                {
+                    "option": "10.25%",
+                    "optionId": "6ea91a6939604a66b6bb2bcf31bd3683"
+                }
+            ],
+            "answer": "6ea91a6939604a66b6bb2bcf31bd3683"
+        },
+        {
+            "questionId": "3824c3877c544ccbb3f2d639af0695f9",
+            "question": "If A: B = 2: 3 and B: C = 4: 5 then C: A is",
+            "options": [
+                {
+                    "option": "15: 8",
+                    "optionId": "2ceadb008a80435ca13290aaa24e4a22"
+                },
+                {
+                    "option": "12: 10",
+                    "optionId": "aeb7e2afc6f64df18162b03bce77fb30"
+                },
+                {
+                    "option": "8: 5",
+                    "optionId": "bebe72faae9e47f6bf2826849a03aa4f"
+                },
+                {
+                    "option": "8: 15",
+                    "optionId": "86721aa48e4840f6af9fb0421d364d06"
+                }
+            ],
+            "answer": "2ceadb008a80435ca13290aaa24e4a22"
+        }
+    ]
+}

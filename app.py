@@ -3,6 +3,9 @@ import json
 import os
 import time
 
+from functionalities.create_questions import addIds
+from functionalities.exam_cell import final_format,get_questions
+from functionalities.symmetric_encrypt import do_encrypt, encrypt, decrypt
 app = Flask(__name__)
 
 # Store organizer names and their questions
@@ -34,7 +37,7 @@ def update_name(organizer_id):
     return render_template('update_name.html', organizer_id=organizer_id)
 
 # Path to store question data
-QUESTIONS_FILE_PATH = 'questions.json'
+QUESTIONS_FILE_PATH = 'live_data/questions.json'
 
 def load_questions(organizer_id):
     """Load questions from JSON file for a specific organizer."""
@@ -66,9 +69,26 @@ def add_questions(organizer_id):
     existing_questions = load_questions(organizer_id)
     return render_template('add_questions.html', organizer_id=organizer_id, questions=existing_questions)
 
+def format_questions():
+    with open(QUESTIONS_FILE_PATH, 'r') as file:
+        all_questions = json.load(file)
+
+    for keys,values in all_questions.items():
+        for i in range(len(values)):
+            all_questions[keys][i] = addIds(values[i])
+
+    with open("live_data/QuestionPaper.json", 'w') as file:
+        json.dump(all_questions, file, indent=4)
+
+    orgs = final_format(all_questions)
+    return orgs
+
 @app.route('/backend')
 def backend():
+    organisers = format_questions()
+    print(organisers)
+    get_questions(organisers)
     return "Welcome to the Backend Page"
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True,port=3000)
