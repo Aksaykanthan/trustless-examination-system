@@ -1,4 +1,5 @@
 import json
+from typing import List
 import uuid
 import random
 import os
@@ -7,16 +8,16 @@ from symmetric_encrypt import do_encrypt, encrypt, decrypt
 from shamirs_secret import ShamirSecret, reconstruct_secret
 
 class Organisers:
-    def __init__(self, centre_name):
+    def __init__(self, centre_name,path="data/organisers.json"):
         self.id = uuid.uuid4().hex
         self.centre_name = centre_name
         self.key = 0
         self.keys = []
-        self.addOrganiser()
+        self.addOrganiser(path)
 
-    def addOrganiser(self):
-        self.Organisers = "data/organisers.json"
-        self.append_to_json(self.Organisers, {"id": self.id, "name": self.centre_name, "keys": []})
+    def addOrganiser(self,path):
+        self.Organisers = path
+        self.append_to_json(self.Organisers, {"id": self.id, "name": self.centre_name, "keys": [],"key":""})
 
         with open(self.Organisers, 'r') as f:
             organisers = json.load(f)
@@ -52,6 +53,14 @@ class Organisers:
             quest = self.encrypt(question)
             Question_Path = "data/EncryptedQuestions.json"
             self.append_to_json(Question_Path, quest)
+    
+    def final_addQuestions(self,questions):
+        self.questions = questions
+
+        for question in self.questions:
+            quest = self.encrypt(question)
+            Question_Path = "live_data/EncryptedQuestions.json"
+            self.append_to_json(Question_Path, quest)
 
     def encrypt(self, question):
         q = {}
@@ -81,49 +90,72 @@ class Organisers:
     def decode_from_string(self, encrypted_str):
         return base64.b64decode(encrypted_str)
 
-    def getQuestions(self):
-        with open("data/EncryptedQuestions.json", 'r') as f:
+    def getQuestions(self,path="data/"):
+        with open(path+"EncryptedQuestions.json", 'r') as f:
             questions = json.load(f)
-        
-        Path = "data/DecryptedQuestions.json"
+
+        Path = path+"DecryptedQuestions.json"
         for question in questions:
             if question["center"] == self.centre_name:
-                # Extract IV and encrypted question
-                encrypted_question = self.decode_from_string(question["question"])
-                decrypted_question = decrypt(encrypted_question, self.key)
-                question["question"] = decrypted_question  # Update decrypted question
-
+                question["question"] = decrypt(self.decode_from_string(question["question"]), self.key)
                 for option in question["options"]:
-                    encrypted_option = self.decode_from_string(option["option"])
-                    decrypted_option = decrypt(encrypted_option, self.key)
-                    option["option"] = decrypted_option  # Update decrypted option
+                    option["option"] = decrypt(self.decode_from_string(option["option"]), self.key)
 
                 self.append_to_json(Path, question)
         return questions
 
+    def do_shamir(self,path="data/organisers.json"):
+        with open(path) as f:
+            organisers = json.load(f)
 
-    def do_shamir(self):
+        self.organisers_count = len(organisers)
         # Convert the byte key to an integer before sharing it
         key_as_int = int.from_bytes(self.key, byteorder='big')
         
         shares = ShamirSecret(key_as_int, self.organisers_count, int(3 / 4 * self.organisers_count))
-        
-        with open("data/organisers.json") as f:
-            organisers = json.load(f)
-            for i in range(self.organisers_count):
-                organisers[i]["keys"].append({"centre": self.centre_name, "share": shares[i]})
 
-    def decrypt_with_shamir(self):
-        # Reconstruct key from Shamir shares
-        reconstructed_key_int = self.reconstruct_key_from_shares()
-        # Convert the integer to 32-byte key
-        self.key = reconstructed_key_int.to_bytes(32, byteorder='big')
+        for i in range(self.organisers_count):
+            organisers[i]["keys"].append({"centre": self.centre_name, "share": shares[i]})
         
-        # Check key length to ensure it's 32 bytes
-        assert len(self.key) == 32, "Key length should be 32 bytes"
-        print("Reconstructed Key:", self.key)  # Debugging: Print to verify correct key format
-        
-        self.getQuestions()
+        with open("data/organisers.json", 'w') as f:
+            json.dump(organisers, f, indent=4)
+
+    def decrypt_with_shamir(self,path="data/"):
+        with open(path+"organisers.json", 'r') as f:
+            organisers = json.load(f)
+
+        shares = []
+        for organiser in organisers:
+            for key in organiser["keys"]:
+                if key["centre"] == self.centre_name:
+                    shares.append(key["share"])
+
+        if len(shares) >= int(3 / 4 * self.organisers_count):
+            reconstructed_key_int = reconstruct_secret(shares)
+            
+            # Convert the reconstructed integer back to bytes, ensuring 32 bytes (for AES-256)
+            reconstructed_key_bytes = reconstructed_key_int.to_bytes(32, byteorder='big')
+            self.key = reconstructed_key_bytes  # Update key with the reconstructed byte key
+
+            # Now decrypt questions for this center
+            self.getQuestions(path)
+        else:
+            print(f"Not enough shares to decrypt questions for {self.centre_name}.")
+
+def final_format(data):
+    organisers = []
+
+    for keys,values in data.items():
+        org = Organisers(keys,"live_data/organisers.json")
+        org.final_addQuestions(values)
+        org.do_shamir("live_data/organisers.json")
+        organisers.append(org)
+
+    return organisers
+
+def get_questions(organisers:List[Organisers]):
+    for organiser in organisers:
+        organiser.decrypt_with_shamir("live_data/")
 
 
 if __name__ == '__main__':
@@ -139,8 +171,11 @@ if __name__ == '__main__':
     # Add questions and apply Shamir for each organiser
     for organiser in organisers:
         organiser.addQuestions("data/QuestionPaper.json")
+    
+        
+    for organiser in organisers:
         organiser.do_shamir()
 
     # Attempt to decrypt questions for each organiser using shares
-    # for organiser in organisers:
-    #     organiser.decrypt_with_shamir()
+    for organiser in organisers:
+        organiser.decrypt_with_shamir()

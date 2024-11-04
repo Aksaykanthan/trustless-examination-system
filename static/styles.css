@@ -1,0 +1,60 @@
+/* General Styles */
+.container {
+    text-align: center;
+    width: 80%;
+}
+
+/* Organizer Cards */
+.organizer-card {
+    display: flex;
+    width: 250px;
+    height: 80px;
+    margin: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.organizer-name {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow-section {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Question Form */
+.question-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.button-group {
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.submit-btn {
+    margin-top: 20px;
+    background-color: #4CAF50;
+}

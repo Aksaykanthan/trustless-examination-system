@@ -1,0 +1,50 @@
+<!-- organizers.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Organizers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Organizers</h1>
+
+        <div class="organizers-list">
+            {% for id, data in organizers.items() %}
+                <div class="organizer-card">
+                    <div class="organizer-name" onclick="updateName('{{ id }}')">
+                        {{ data['name'] }}
+                    </div>
+                    <div class="arrow-section" onclick="window.location.href='/add_questions/{{ id }}'">
+                        ➔
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+
+        <!-- End Question Addition button -->
+        <div class="end-question-button">
+            <button id="end-question-btn" onclick="endQuestionAddition()">End Question Addition</button>
+        </div>
+    </div>
+
+    <script>
+        function updateName(organizerId) {
+            window.location.href = `/update_name/${organizerId}`;
+        }
+
+        function endQuestionAddition() {
+            // Disable all buttons
+            document.querySelectorAll("button").forEach(button => {
+                button.disabled = true;
+            });
+
+            // Redirect to the backend page after 3 seconds
+            setTimeout(() => {
+                window.location.href = "{{ url_for('backend') }}";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>

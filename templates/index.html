@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organizer Setup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Enter the Number of Organizers</h1>
+        <form action="{{ url_for('organizers_page') }}" method="POST">
+            <input type="number" name="num_organizers" placeholder="Number of organizers" min="1" required>
+            <button type="submit">Create Organizers</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Questions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Add Questions for Organizer {{ organizer_id }}</h1>
+
+        <div id="question-container" data-organizer-id="{{ organizer_id }}"></div>
+
+        <div class="button-group">
+            <button onclick="addQuestion()">Add Question</button>
+            <button onclick="removeQuestion()">Delete Last Question</button>
+        </div>
+
+        <button class="submit-btn" onclick="submitQuestions()">Submit</button>
+    </div>
+
+    <script>
+        // JavaScript variable holding questions passed from Jinja2
+        const existingQuestions = JSON.parse('{{ questions | tojson | safe }}');
+        let questionCount = 0;
+
+        // Function to add a question input box
+        function addQuestion(questionData = { question: '', options: ['', '', '', ''], answer: '' }) {
+            questionCount++;
+            const container = document.getElementById('question-container');
+            const questionBox = document.createElement('div');
+            questionBox.className = 'question-box';
+            questionBox.innerHTML = `
+                <h3>Question ${questionCount}</h3>
+                <input type="text" placeholder="Enter question" class="question-text" value="${questionData.question}" required>
+                <div class="options">
+                    <input type="text" placeholder="Option 1" class="option" value="${questionData.options[0]}" required>
+                    <input type="text" placeholder="Option 2" class="option" value="${questionData.options[1]}" required>
+                    <input type="text" placeholder="Option 3" class="option" value="${questionData.options[2]}" required>
+                    <input type="text" placeholder="Option 4" class="option" value="${questionData.options[3]}" required>
+                </div>
+                <input type="text" placeholder="Answer" class="answer" value="${questionData.answer}" required>
+            `;
+            container.appendChild(questionBox);
+        }
+
+        // Function to remove the last question input box
+        function removeQuestion() {
+            const container = document.getElementById('question-container');
+            if (container.lastElementChild) {
+                container.removeChild(container.lastElementChild);
+                questionCount--;
+            }
+        }
+
+        // Function to submit questions to the server
+        function submitQuestions() {
+            const organizerId = document.getElementById('question-container').getAttribute('data-organizer-id');
+            const questions = [];
+            document.querySelectorAll('.question-box').forEach(box => {
+                const questionText = box.querySelector('.question-text').value;
+                const options = Array.from(box.querySelectorAll('.option')).map(opt => opt.value);
+                const answer = box.querySelector('.answer').value;
+
+                questions.push({
+                    "question": questionText,
+                    "options": options,
+                    "answer": answer
+                });
+            });
+
+            fetch(`/add_questions/${organizerId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ "questions": questions })
+            }).then(() => window.location.href = '/show_organizers');
+        }
+
+        // Load existing questions on page load
+        window.onload = function() {
+            existingQuestions.forEach(questionData => addQuestion(questionData));
+        };
+    </script>
+</body>
+</html>
