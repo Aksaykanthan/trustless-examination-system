@@ -1,171 +1,171 @@
 {
     "1": [
         {
-            "questionId": "4c5bfe70045944fc9b5473efed28616f",
+            "questionId": "81f1dfe3cc16499db1a8403808398d1a",
             "question": "If 25 percent of a number is 10, then what is 75 percent of the number?",
             "options": [
                 {
                     "option": "30",
-                    "optionId": "99802f13aa6c4239914d6493cf60f88c"
+                    "optionId": "67f65afac4314d569255ad880fb8d134"
                 },
                 {
                     "option": "20",
-                    "optionId": "6169d18127b24288accb95ec848a8cec"
+                    "optionId": "c0e79349af8e4cf5bbf3fedf42af39c9"
                 },
                 {
                     "option": "25",
-                    "optionId": "ea0a54cc85f84318922b2778cda84a2f"
+                    "optionId": "01e82a5d47e54082adbfd610afa06d71"
                 },
                 {
                     "option": "35",
-                    "optionId": "7c4437f1b82e4d03b75bbfcc1043785d"
+                    "optionId": "7a3a10b91da049379eea7c06fa0d05ea"
                 }
             ],
-            "answer": "99802f13aa6c4239914d6493cf60f88c"
+            "answer": "67f65afac4314d569255ad880fb8d134"
         },
         {
-            "questionId": "c15aef9a965349bda858b3dbd96855cc",
+            "questionId": "7df5ce2246474b1f830236034489a063",
             "question": "Which of the following is the largest number?",
             "options": [
                 {
                     "option": "40% of 200",
-                    "optionId": "a65f000943dc48c1942e031cb1c20eb3"
+                    "optionId": "48bea8b3cf294f049acb7311dd996772"
                 },
                 {
                     "option": "14% of 500",
-                    "optionId": "8a8e0b273c35489d9bcf2d59a4029d61"
+                    "optionId": "a4acce6b217d49dc94b44af1920541ed"
                 },
                 {
                     "option": "6% of 1300",
-                    "optionId": "545e438238ae46ebb7b2b4b7d367d350"
+                    "optionId": "5a3fc60ce9e94300839a055ee2cd2050"
                 },
                 {
                     "option": "700% of 18",
-                    "optionId": "a17a536690634d7ab0a96de1467c21d5"
+                    "optionId": "bee08bfb3ea14862b42bb17641c923c2"
                 }
             ],
-            "answer": "a17a536690634d7ab0a96de1467c21d5"
+            "answer": "bee08bfb3ea14862b42bb17641c923c2"
         }
     ],
     "2": [
         {
-            "questionId": "0a25afbcbe5a407e926c72cfd7b3a8ef",
+            "questionId": "e01094898d284954a4b5581caed75d94",
             "question": "If 25% of a number is 75, then 45% of that number is:",
             "options": [
                 {
                     "option": "145",
-                    "optionId": "338caea1632b4394aec6cd1c27ef3c90"
+                    "optionId": "cdc84d8cd8f24b4b880732cb70d983f1"
                 },
                 {
                     "option": "125",
-                    "optionId": "0adf53fcc735426d86eb05f158959f59"
+                    "optionId": "53373b8090404e43bede2f71b5678b7e"
                 },
                 {
                     "option": "150",
-                    "optionId": "d48d3f645439474d9565198f206a362b"
+                    "optionId": "bfde2b016c8c4eec9c9d3808ec688653"
                 },
                 {
                     "option": "135",
-                    "optionId": "54ca2bee6d3b48ce87904bf9915f59b6"
+                    "optionId": "57853c8180044dc4ae6442d8d3acad93"
                 }
             ],
-            "answer": "54ca2bee6d3b48ce87904bf9915f59b6"
+            "answer": "57853c8180044dc4ae6442d8d3acad93"
         },
         {
-            "questionId": "132ce71d3b1c4b6e9c5dfb511a26038d",
+            "questionId": "1d48797c98504eeea5b2758efaf9887a",
             "question": "What is 70% of 50% of 20% of 75?",
             "options": [
                 {
                     "option": "5.25",
-                    "optionId": "5914e06c95db4dd3afcc9133012cbb70"
+                    "optionId": "099a8febebdb4c22a0ad728b5dea1189"
                 },
                 {
                     "option": "5.75",
-                    "optionId": "4d20114190884682a20b9bc4f847670f"
+                    "optionId": "4881e05f72ca431e9a16afb3f468baaa"
                 },
                 {
                     "option": "6.25",
-                    "optionId": "007460b487554faa9605610e07b1bbf3"
+                    "optionId": "d5409f413aac4f739047a624758af5b0"
                 },
                 {
                     "option": "5.5",
-                    "optionId": "6c0405593abb443390b7bf145ba8404c"
+                    "optionId": "49217c9566664553b7d3cc8ac80a2544"
                 }
             ],
-            "answer": "5914e06c95db4dd3afcc9133012cbb70"
+            "answer": "099a8febebdb4c22a0ad728b5dea1189"
         }
     ],
     "3": [
         {
-            "questionId": "a998d471505644a2a4382bb0c4287bd2",
+            "questionId": "c36ae9d80371483f86a8c6e05c25a41d",
             "question": "If Ramesh gets 10% more salary than Suresh, then Suresh gets:",
             "options": [
                 {
                     "option": "10% less than Ramesh",
-                    "optionId": "a32faaa547bc40e3b8feb90c915e958c"
+                    "optionId": "53718a2fc8d144c2a3a77f755e68c8b2"
                 },
                 {
                     "option": "9 1/11% more than Ramesh",
-                    "optionId": "e8a0a4b99532474993ff121c9a4addd3"
+                    "optionId": "c6c3cf10f3d94f3c95508c472d123d73"
                 },
                 {
                     "option": "9 1/11% less than Ramesh",
-                    "optionId": "1f07be055735431680ff086107b8e8cc"
+                    "optionId": "cdcf7c9792c94b798c6cbe1c1b6314ca"
                 },
                 {
                     "option": "Cannot be determined",
-                    "optionId": "0d02acdffbad4f3492a7d198426507c4"
+                    "optionId": "4068ef5478ce44aaba7a6c4088a00baa"
                 }
             ],
-            "answer": "1f07be055735431680ff086107b8e8cc"
+            "answer": "cdcf7c9792c94b798c6cbe1c1b6314ca"
         }
     ],
     "4": [
         {
-            "questionId": "23f55bd101354d41ba17da014d80eeb6",
+            "questionId": "aefc7a51922c4c45adfc2f788c21ea49",
             "question": "If the radius of the circle is increased by 5%, then the area is increased by:",
             "options": [
                 {
                     "option": "10.20%",
-                    "optionId": "80e85dc8d44547169f8532e81f4306c9"
+                    "optionId": "f22f9cb7d1564f688316e3c8ba1297e7"
                 },
                 {
                     "option": "10.22%",
-                    "optionId": "7f1648d9fe6f4a189b1d8fdd60094c09"
+                    "optionId": "5626ff518bba4adc897b25d65c81d0f1"
                 },
                 {
                     "option": "10.24%",
-                    "optionId": "e57870dfbe324770b3dd5148cef43eaf"
+                    "optionId": "85dbf74667d84eb2bd3215a63ec656ff"
                 },
                 {
                     "option": "10.25%",
-                    "optionId": "6ea91a6939604a66b6bb2bcf31bd3683"
+                    "optionId": "291ebbe6864144fe8215d55a82a99ab9"
                 }
             ],
-            "answer": "6ea91a6939604a66b6bb2bcf31bd3683"
+            "answer": "291ebbe6864144fe8215d55a82a99ab9"
         },
         {
-            "questionId": "3824c3877c544ccbb3f2d639af0695f9",
+            "questionId": "f4c7a6c815e9461699287cb538fc6be7",
             "question": "If A: B = 2: 3 and B: C = 4: 5 then C: A is",
             "options": [
                 {
                     "option": "15: 8",
-                    "optionId": "2ceadb008a80435ca13290aaa24e4a22"
+                    "optionId": "0e0aa01ea12049f18e2b05bf10f3f3ae"
                 },
                 {
                     "option": "12: 10",
-                    "optionId": "aeb7e2afc6f64df18162b03bce77fb30"
+                    "optionId": "8ca64aaaacbe4afa9d560e8fdc8bb7a0"
                 },
                 {
                     "option": "8: 5",
-                    "optionId": "bebe72faae9e47f6bf2826849a03aa4f"
+                    "optionId": "1daaf812108c4c22b1f4b162fbb9fb66"
                 },
                 {
                     "option": "8: 15",
-                    "optionId": "86721aa48e4840f6af9fb0421d364d06"
+                    "optionId": "d742728363a045dfb028f17c85dbf3c3"
                 }
             ],
-            "answer": "2ceadb008a80435ca13290aaa24e4a22"
+            "answer": "0e0aa01ea12049f18e2b05bf10f3f3ae"
         }
     ]
 }

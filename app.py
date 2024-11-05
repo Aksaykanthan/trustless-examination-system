@@ -86,7 +86,6 @@ def format_questions():
 @app.route('/backend')
 def backend():
     organisers = format_questions()
-    print(organisers)
     get_questions(organisers)
     return "Welcome to the Backend Page"
 

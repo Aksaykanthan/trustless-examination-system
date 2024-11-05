@@ -107,12 +107,11 @@ class Organisers:
                 self.append_to_json(Path, question)
         return questions
 
-    def do_shamir(self,path="data/organisers.json"):
+    def do_shamir(self, path="data/organisers.json"):
         with open(path) as f:
             organisers = json.load(f)
 
         self.organisers_count = len(organisers)
-        # Convert the byte key to an integer before sharing it
         key_as_int = int.from_bytes(self.key, byteorder='big')
         
         shares = ShamirSecret(key_as_int, self.organisers_count, int(3 / 4 * self.organisers_count))
@@ -123,7 +122,7 @@ class Organisers:
         with open(path, 'w') as f:
             json.dump(organisers, f, indent=4)
 
-    def decrypt_with_shamir(self,path="data/"):
+    def decrypt_with_shamir(self, path="data/"):
         with open(path+"organisers.json", 'r') as f:
             organisers = json.load(f)
 
@@ -139,10 +138,64 @@ class Organisers:
             # Convert the reconstructed integer back to bytes, ensuring 32 bytes (for AES-256)
             reconstructed_key_bytes = reconstructed_key_int.to_bytes(32, byteorder='big')
             self.key = reconstructed_key_bytes  # Update key with the reconstructed byte key
-            print("\nKeyy\n")
-            print(self.key)
 
             # Now decrypt questions for this center
+            self.getQuestions(path)
+        else:
+            print(f"Not enough shares to decrypt questions for {self.centre_name}.")
+
+    def do_shamir_final(self, path="data/organisers.json"):
+        with open(path) as f:
+            organisers = json.load(f)
+
+        self.organisers_count = len(organisers)
+        
+        # Split the 32-byte key into 4 chunks of 8 bytes each
+        chunks = [self.key[i:i+8] for i in range(0, len(self.key), 8)]
+        all_shares = []
+        
+        # Generate shares for each chunk
+        for chunk in chunks:
+            chunk_int = int.from_bytes(chunk, byteorder='big')
+            shares = ShamirSecret(chunk_int, self.organisers_count, int(3/4 * self.organisers_count))
+            all_shares.append(shares)
+        
+        # Reorganize shares for each organizer
+        for i in range(self.organisers_count):
+            organizer_shares = [shares[i] for shares in all_shares]
+            organisers[i]["keys"].append({
+                "centre": self.centre_name,
+                "shares": organizer_shares
+            })
+        
+        with open(path, 'w') as f:
+            json.dump(organisers, f, indent=4)
+
+    def decrypt_with_shamir_final(self, path="data/"):
+        with open(path+"organisers.json", 'r') as f:
+            organisers = json.load(f)
+
+        # Collect all shares for each chunk
+        chunk_shares = [[] for _ in range(4)]  # 4 chunks
+        for organiser in organisers:
+            for key in organiser["keys"]:
+                if key["centre"] == self.centre_name:
+                    for i, share in enumerate(key["shares"]):
+                        chunk_shares[i].append(share)
+
+        if all(len(shares) >= int(3/4 * self.organisers_count) for shares in chunk_shares):
+            # Reconstruct each chunk
+            reconstructed_chunks = []
+            for shares in chunk_shares:
+                chunk_int = reconstruct_secret(shares)
+                chunk_bytes = chunk_int.to_bytes(8, byteorder='big')
+                reconstructed_chunks.append(chunk_bytes)
+            
+            # Combine chunks back into the key
+            self.key = b''.join(reconstructed_chunks)
+            print(f"Original key: {self.key}")
+            print(f"Reconstructed key: {self.key}")
+            
             self.getQuestions(path)
         else:
             print(f"Not enough shares to decrypt questions for {self.centre_name}.")
@@ -156,13 +209,13 @@ def final_format(data):
         organisers.append(org)
 
     for organiser in organisers:
-        organiser.do_shamir("live_data/organisers.json")
+        organiser.do_shamir_final("live_data/organisers.json")
 
     return organisers
 
 def get_questions(organisers:List[Organisers]):
     for organiser in organisers:
-        organiser.decrypt_with_shamir("live_data/")
+        organiser.decrypt_with_shamir_final("live_data/")
 
 
 if __name__ == '__main__':
