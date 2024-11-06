@@ -1,0 +1,80 @@
+{
+    "1": [
+        {
+            "question": "If 25 percent of a number is 10, then what is 75 percent of the number?",
+            "options": [
+                "30",
+                "20",
+                "25",
+                "35"
+            ],
+            "answer": "30"
+        },
+        {
+            "question": "Which of the following is the largest number?",
+            "options": [
+                "40% of 200",
+                "14% of 500",
+                "6% of 1300",
+                "700% of 18"
+            ],
+            "answer": "700% of 18"
+        }
+    ],
+    "2": [
+        {
+            "question": "If 25% of a number is 75, then 45% of that number is:",
+            "options": [
+                "145",
+                "125",
+                "150",
+                "135"
+            ],
+            "answer": "135"
+        },
+        {
+            "question": "What is 70% of 50% of 20% of 75?",
+            "options": [
+                "5.25",
+                "5.75",
+                "6.25",
+                "5.5"
+            ],
+            "answer": "5.25"
+        }
+    ],
+    "3": [
+        {
+            "question": "If Ramesh gets 10% more salary than Suresh, then Suresh gets:",
+            "options": [
+                "10% less than Ramesh",
+                "9 1/11% more than Ramesh",
+                "9 1/11% less than Ramesh",
+                "Cannot be determined"
+            ],
+            "answer": "9 1/11% less than Ramesh"
+        }
+    ],
+    "4": [
+        {
+            "question": "If the radius of the circle is increased by 5%, then the area is increased by:",
+            "options": [
+                "10.20%",
+                "10.22%",
+                "10.24%",
+                "10.25%"
+            ],
+            "answer": "10.25%"
+        },
+        {
+            "question": "If A: B = 2: 3 and B: C = 4: 5 then C: A is",
+            "options": [
+                "15: 8",
+                "12: 10",
+                "8: 5",
+                "8: 15"
+            ],
+            "answer": "15: 8"
+        }
+    ]
+}

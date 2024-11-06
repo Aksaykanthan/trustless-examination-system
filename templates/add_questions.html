@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Questions</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>Add Questions for Organizer {{ organizer_id }}</h1>
+        </header>
+        <main>
+            <div id="question-container" data-organizer-id="{{ organizer_id }}" class="question-container"></div>
+            <div class="button-group">
+                <button onclick="addQuestion()" class="btn btn-secondary">Add Question</button>
+                <button onclick="removeQuestion()" class="btn btn-secondary">Delete Last Question</button>
+            </div>
+            <button class="btn btn-primary submit-btn" onclick="submitQuestions()">Submit</button>
+        </main>
+    </div>
+
+    <script>
+        const existingQuestions = JSON.parse('{{ questions | tojson | safe }}');
+        let questionCount = 0;
+
+        function addQuestion(questionData = { question: '', options: ['', '', '', ''], answer: '' }) {
+            questionCount++;
+            const container = document.getElementById('question-container');
+            const questionBox = document.createElement('div');
+            questionBox.className = 'question-box';
+            questionBox.innerHTML = `
+                <h3>Question ${questionCount}</h3>
+                <input type="text" placeholder="Enter question" class="form-input question-text" value="${questionData.question}" required>
+                <div class="options">
+                    <input type="text" placeholder="Option 1" class="form-input option" value="${questionData.options[0]}" required>
+                    <input type="text" placeholder="Option 2" class="form-input option" value="${questionData.options[1]}" required>
+                    <input type="text" placeholder="Option 3" class="form-input option" value="${questionData.options[2]}" required>
+                    <input type="text" placeholder="Option 4" class="form-input option" value="${questionData.options[3]}" required>
+                </div>
+                <input type="text" placeholder="Answer" class="form-input answer" value="${questionData.answer}" required>
+            `;
+            container.appendChild(questionBox);
+        }
+
+        function removeQuestion() {
+            const container = document.getElementById('question-container');
+            if (container.lastElementChild) {
+                container.removeChild(container.lastElementChild);
+                questionCount--;
+            }
+        }
+
+        function submitQuestions() {
+            const organizerId = document.getElementById('question-container').getAttribute('data-organizer-id');
+            const questions = [];
+            document.querySelectorAll('.question-box').forEach(box => {
+                const questionText = box.querySelector('.question-text').value;
+                const options = Array.from(box.querySelectorAll('.option')).map(opt => opt.value);
+                const answer = box.querySelector('.answer').value;
+
+                questions.push({
+                    "question": questionText,
+                    "options": options,
+                    "answer": answer
+                });
+            });
+
+            fetch(`/add_questions/${organizerId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ "questions": questions })
+            }).then(() => window.location.href = '/show_organizers');
+        }
+
+        window.onload = function() {
+            existingQuestions.forEach(questionData => addQuestion(questionData));
+        };
+    </script>
+</body>
+</html>

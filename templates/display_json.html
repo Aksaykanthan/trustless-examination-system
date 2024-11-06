@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Display</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script>
+        async function fetchAndDisplayJSON(url) {
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                const container = document.getElementById('json-container');
+                container.innerHTML = '';
+                displayData(data, container);
+            } catch (error) {
+                console.error("Error fetching JSON data:", error);
+                document.getElementById('error-message').textContent = "Failed to load data. Please try again later.";
+            }
+        }
+
+        function displayData(data, container) {
+            if (Array.isArray(data)) {
+                data.forEach((item, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'json-card';
+                    card.innerHTML = generateHTML(item, `Item ${index + 1}`);
+                    container.appendChild(card);
+                });
+            } else if (typeof data === 'object') {
+                Object.keys(data).forEach(key => {
+                    const card = document.createElement('div');
+                    card.className = 'json-card';
+                    card.innerHTML = `<h3 class="card-title">Key: ${key}</h3>` + generateHTML(data[key]);
+                    container.appendChild(card);
+                });
+            } else {
+                container.innerHTML = "<p class='error-message'>Unsupported JSON structure</p>";
+            }
+        }
+
+        function generateHTML(item, title = '') {
+            let html = title ? `<h3 class="card-title">${title}</h3>` : '';
+            html += '<div class="card-content">';
+            if (Array.isArray(item)) {
+                html += `<details><summary>Array (${item.length} items)</summary>`;
+                item.forEach((subItem, idx) => {
+                    html += `<div class="json-subcard"><h4>Array Item ${idx + 1}</h4>${generateHTML(subItem)}</div>`;
+                });
+                html += '</details>';
+            } else if (typeof item === 'object') {
+                for (const key in item) {
+                    if (Array.isArray(item[key])) {
+                        html += `<details><summary>${key} (${item[key].length} items)</summary><div class="json-array">${generateHTML(item[key])}</div></details>`;
+                    } else if (typeof item[key] === 'object') {
+                        html += `<details><summary>${key}</summary><div class="json-nested">${generateHTML(item[key])}</div></details>`;
+                    } else {
+                        html += `<p><strong>${key}:</strong> <span>${item[key]}</span></p>`;
+                    }
+                }
+            } else {
+                html += `<p>${item}</p>`;
+            }
+            html += '</div>';
+            return html;
+        }
+
+        function toggleCollapse(element) {
+            element.classList.toggle('collapsed');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>{{ title }}</h1>
+        </header>
+        <main>
+            <div id="error-message" class="error-message"></div>
+            <div id="json-container" class="json-container">
+                <div class="loading">Loading data...</div>
+            </div>
+        </main>
+        <footer class="page-footer">
+            <button onclick="location.href='/backend'" class="btn btn-primary">Back to Dashboard</button>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetchAndDisplayJSON('{{ json_url }}');
+        });
+    </script>
+</body>
+</html>

@@ -1,22 +1,24 @@
 import json
+from typing import List
 import uuid
 import random
 import os
 import base64 
-from symmetric_encrypt import do_encrypt, encrypt, decrypt
-from shamirs_secret import ShamirSecret, reconstruct_secret
+from functionalities.shamirs_secret import ShamirSecret, reconstruct_secret
+from functionalities.symmetric_encrypt import do_encrypt, encrypt, decrypt
+
 
 class Organisers:
-    def __init__(self, centre_name):
+    def __init__(self, centre_name,path="data/organisers.json"):
         self.id = uuid.uuid4().hex
         self.centre_name = centre_name
         self.key = 0
         self.keys = []
-        self.addOrganiser()
+        self.addOrganiser(path)
 
-    def addOrganiser(self):
-        self.Organisers = "data/organisers.json"
-        self.append_to_json(self.Organisers, {"id": self.id, "name": self.centre_name, "keys": []})
+    def addOrganiser(self,path):
+        self.Organisers = path
+        self.append_to_json(self.Organisers, {"id": self.id, "name": self.centre_name, "keys": [],"key":""})
 
         with open(self.Organisers, 'r') as f:
             organisers = json.load(f)
@@ -52,12 +54,22 @@ class Organisers:
             quest = self.encrypt(question)
             Question_Path = "data/EncryptedQuestions.json"
             self.append_to_json(Question_Path, quest)
+    
+    def final_addQuestions(self,questions):
+        self.questions = questions
+
+        for question in self.questions:
+            quest = self.encrypt(question)
+            Question_Path = "live_data/EncryptedQuestions.json"
+            self.append_to_json(Question_Path, quest)
 
     def encrypt(self, question):
         q = {}
         if self.key == 0:
             encrypted_question, self.key = do_encrypt(question["question"], self.id)
             q["question"] = self.encode_to_string(encrypted_question)
+            print("keyedd\n")
+            print(self.key)
         else:
             encrypted_question = encrypt(question["question"], self.key)
             q["question"] = self.encode_to_string(encrypted_question)
@@ -81,11 +93,11 @@ class Organisers:
     def decode_from_string(self, encrypted_str):
         return base64.b64decode(encrypted_str)
 
-    def getQuestions(self):
-        with open("data/EncryptedQuestions.json", 'r') as f:
+    def getQuestions(self,path="data/"):
+        with open(path+"EncryptedQuestions.json", 'r') as f:
             questions = json.load(f)
 
-        Path = "data/DecryptedQuestions.json"
+        Path = path+"DecryptedQuestions.json"
         for question in questions:
             if question["center"] == self.centre_name:
                 question["question"] = decrypt(self.decode_from_string(question["question"]), self.key)
@@ -95,12 +107,11 @@ class Organisers:
                 self.append_to_json(Path, question)
         return questions
 
-    def do_shamir(self):
-        with open("data/organisers.json") as f:
+    def do_shamir(self, path="data/organisers.json"):
+        with open(path) as f:
             organisers = json.load(f)
 
         self.organisers_count = len(organisers)
-        # Convert the byte key to an integer before sharing it
         key_as_int = int.from_bytes(self.key, byteorder='big')
         
         shares = ShamirSecret(key_as_int, self.organisers_count, int(3 / 4 * self.organisers_count))
@@ -108,11 +119,11 @@ class Organisers:
         for i in range(self.organisers_count):
             organisers[i]["keys"].append({"centre": self.centre_name, "share": shares[i]})
         
-        with open("data/organisers.json", 'w') as f:
+        with open(path, 'w') as f:
             json.dump(organisers, f, indent=4)
 
-    def decrypt_with_shamir(self):
-        with open("data/organisers.json", 'r') as f:
+    def decrypt_with_shamir(self, path="data/"):
+        with open(path+"organisers.json", 'r') as f:
             organisers = json.load(f)
 
         shares = []
@@ -129,9 +140,83 @@ class Organisers:
             self.key = reconstructed_key_bytes  # Update key with the reconstructed byte key
 
             # Now decrypt questions for this center
-            self.getQuestions()
+            self.getQuestions(path)
         else:
             print(f"Not enough shares to decrypt questions for {self.centre_name}.")
+
+    def do_shamir_final(self, path="data/organisers.json"):
+        with open(path) as f:
+            organisers = json.load(f)
+
+        self.organisers_count = len(organisers)
+        
+        # Split the 32-byte key into 4 chunks of 8 bytes each
+        chunks = [self.key[i:i+8] for i in range(0, len(self.key), 8)]
+        all_shares = []
+        
+        # Generate shares for each chunk
+        for chunk in chunks:
+            chunk_int = int.from_bytes(chunk, byteorder='big')
+            shares = ShamirSecret(chunk_int, self.organisers_count, int(3/4 * self.organisers_count))
+            all_shares.append(shares)
+        
+        # Reorganize shares for each organizer
+        for i in range(self.organisers_count):
+            organizer_shares = [shares[i] for shares in all_shares]
+            organisers[i]["keys"].append({
+                "centre": self.centre_name,
+                "shares": organizer_shares
+            })
+        
+        with open(path, 'w') as f:
+            json.dump(organisers, f, indent=4)
+
+    def decrypt_with_shamir_final(self, path="data/"):
+        with open(path+"organisers.json", 'r') as f:
+            organisers = json.load(f)
+
+        # Collect all shares for each chunk
+        chunk_shares = [[] for _ in range(4)]  # 4 chunks
+        for organiser in organisers:
+            for key in organiser["keys"]:
+                if key["centre"] == self.centre_name:
+                    for i, share in enumerate(key["shares"]):
+                        chunk_shares[i].append(share)
+
+        if all(len(shares) >= int(3/4 * self.organisers_count) for shares in chunk_shares):
+            # Reconstruct each chunk
+            reconstructed_chunks = []
+            for shares in chunk_shares:
+                chunk_int = reconstruct_secret(shares)
+                chunk_bytes = chunk_int.to_bytes(8, byteorder='big')
+                reconstructed_chunks.append(chunk_bytes)
+            
+            # Combine chunks back into the key
+            self.key = b''.join(reconstructed_chunks)
+            print(f"Original key: {self.key}")
+            print(f"Reconstructed key: {self.key}")
+            
+            self.getQuestions(path)
+        else:
+            print(f"Not enough shares to decrypt questions for {self.centre_name}.")
+
+def final_format(data):
+    organisers = []
+
+    for keys,values in data.items():
+        org = Organisers(keys,"live_data/organisers.json")
+        org.final_addQuestions(values)
+        organisers.append(org)
+
+    for organiser in organisers:
+        organiser.do_shamir_final("live_data/organisers.json")
+
+    return organisers
+
+def get_questions(organisers:List[Organisers]):
+    for organiser in organisers:
+        organiser.decrypt_with_shamir_final("live_data/")
+
 
 if __name__ == '__main__':
     # Create 5 organizers
@@ -147,7 +232,6 @@ if __name__ == '__main__':
     for organiser in organisers:
         organiser.addQuestions("data/QuestionPaper.json")
     
-    print(organisers[0].key)
         
     for organiser in organisers:
         organiser.do_shamir()

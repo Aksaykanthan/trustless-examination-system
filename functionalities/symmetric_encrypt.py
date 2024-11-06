@@ -32,6 +32,6 @@ if __name__ == '__main__':
     data = 'hello world 1234'
     password = "ExamsAreCool"
     encrypted,key = do_encrypt(data,password)
-    print(encrypted)
+    print(encrypted,end="\n\n")
     decrypted = decrypt(encrypted,key)
     print(decrypted)

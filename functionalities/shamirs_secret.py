@@ -67,13 +67,12 @@ if __name__ == '__main__':
  
     # Phase I: Generation of shares
     shares = generate_shares(total_shares, threshold, secret) 
-    print(shares)
-    print(f'Shares: {", ".join(str(share) for share in shares)}')
+    print(f'\nShares: {", ".join(str(share) for share in shares)}\n')
  
     # Phase II: Secret Reconstruction
     pool = random.sample(shares, threshold) # Nothing but takes random 3 shares from total
     print(f'Combining shares: {", ".join(str(share) for share in pool)}')
-    print(f'Reconstructed secret: {reconstruct_secret(pool)}')
+    print(f'\nReconstructed secret: {reconstruct_secret(pool)}')
 
     # shares = [[41995, 88005544978243525395867303165512797245133915281764755685631547528387408949851], [96683, 88005544978243525395867303165512797245133915281764755685631547697012089061179], [17867, 88005544978243525395867303165512797245133915281764755685631547496273050914715], [80207, 88005544978243525395867303165512797245133915281764755685631547632211978771015], [72527, 88005544978243525395867303165512797245133915281764755685631547606131346694215]]
     # value = reconstruct_secret(shares)

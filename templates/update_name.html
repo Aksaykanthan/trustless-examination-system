@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Organizer Name</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>Update Organizer Name</h1>
+        </header>
+        <main>
+            <form action="/update_name/{{ organizer_id }}" method="POST" class="form-card">
+                <input type="text" name="new_name" placeholder="Enter new name" required class="form-input">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
