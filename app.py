@@ -4,8 +4,8 @@ import os
 import time
 
 from functionalities.create_questions import addIds
-from functionalities.exam_cell import final_format,get_questions
-from functionalities.symmetric_encrypt import do_encrypt, encrypt, decrypt
+from functionalities.exam_cell import final_format, get_questions
+
 app = Flask(__name__)
 
 # Store organizer names and their questions
@@ -13,6 +13,8 @@ organizers = {}
 
 @app.route('/')
 def index():
+    global T
+    T = 0 
     return render_template('index.html')
 
 @app.route('/organizers', methods=['POST', 'GET'])
@@ -38,6 +40,10 @@ def update_name(organizer_id):
 
 # Path to store question data
 QUESTIONS_FILE_PATH = 'live_data/questions.json'
+
+def load_json(url):
+    with open(url, 'r') as file:
+        return json.load(file)
 
 def load_questions(organizer_id):
     """Load questions from JSON file for a specific organizer."""
@@ -87,7 +93,39 @@ def format_questions():
 def backend():
     organisers = format_questions()
     get_questions(organisers)
-    return "Welcome to the Backend Page"
+    return render_template('backend.html')
+
+@app.route('/questions')
+def questions():
+    return render_template('display_json.html', title="Questions", json_url="/questions_data")
+
+@app.route('/questions_data')
+def questions_data():
+    return jsonify(load_json("live_data/questions.json"))
+
+@app.route('/questions_with_ID')
+def questions_with_id():
+    return render_template('display_json.html', title="Questions with ID", json_url="/questions_with_ID_data")
+
+@app.route('/questions_with_ID_data')
+def questions_with_ID_data():
+    return jsonify(load_json("live_data/QuestionPaper.json"))
+
+@app.route('/organisers_json')
+def organisers():
+    return render_template('display_json.html', title="Organisers", json_url="/organisers_data")
+
+@app.route('/organisers_data')
+def organisers_data():
+    return jsonify(load_json("live_data/organisers.json"))
+
+@app.route('/encrypted_questions')
+def encrypted_questions():
+    return render_template('display_json.html', title="Encrypted Questions", json_url="/encrypted_questions_data")
+
+@app.route('/encrypted_questions_data')
+def encrypted_questions_data():
+    return jsonify(load_json("live_data/EncryptedQuestions.json"))
 
 if __name__ == '__main__':
     app.run(debug=True,port=3000)

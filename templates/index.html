@@ -8,11 +8,15 @@
 </head>
 <body>
     <div class="container">
-        <h1>Enter the Number of Organizers</h1>
-        <form action="{{ url_for('organizers_page') }}" method="POST">
-            <input type="number" name="num_organizers" placeholder="Number of organizers" min="1" required>
-            <button type="submit">Create Organizers</button>
-        </form>
+        <header class="page-header">
+            <h1>Enter the Number of Organizers</h1>
+        </header>
+        <main>
+            <form action="{{ url_for('organizers_page') }}" method="POST" class="form-card">
+                <input type="number" name="num_organizers" placeholder="Number of organizers" min="1" required class="form-input">
+                <button type="submit" class="btn btn-primary">Create Organizers</button>
+            </form>
+        </main>
     </div>
 </body>
 </html>

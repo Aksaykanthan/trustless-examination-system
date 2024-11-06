@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backend Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>Backend Dashboard</h1>
+        </header>
+        <main>
+            <section class="dashboard-section">
+                <h2 class="section-title">Temporary (Not Stored)</h2>
+                <div class="card-grid">
+                    <div class="card" onclick="navigateTo('questions')">
+                        <div class="card-content">
+                            <h3>Questions</h3>
+                            <span class="card-icon">📝</span>
+                        </div>
+                    </div>
+                    <div class="card" onclick="navigateTo('questions_with_ID')">
+                        <div class="card-content">
+                            <h3>Questions with ID</h3>
+                            <span class="card-icon">🔢</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="dashboard-section">
+                <h2 class="section-title">Private Database</h2>
+                <div class="card-grid">
+                    <div class="card" onclick="navigateTo('organisers_json')">
+                        <div class="card-content">
+                            <h3>Organisers</h3>
+                            <span class="card-icon">👥</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="dashboard-section">
+                <h2 class="section-title">Public Database</h2>
+                <div class="card-grid">
+                    <div class="card" onclick="navigateTo('encrypted_questions')">
+                        <div class="card-content">
+                            <h3>Encrypted Questions</h3>
+                            <span class="card-icon">🔒</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="page-footer">
+            <button id="back-dashboard-btn" onclick="goToDashboard()" class="btn btn-primary">Back to Dashboard</button>
+        </footer>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            window.location.href = `/${page}`;
+        }
+
+        function goToDashboard() {
+            window.location.href = "/backend";
+        }
+    </script>
+</body>
+</html>

@@ -133,7 +133,7 @@ def decrypt_with_key(encrypted_text, public_key,n):
 if __name__ == '__main__':
     message = "Find the number of zeroes at the end of 48!."
 
-    coded,private_key1,public_key1 = start_encrypt(message) 
+    coded,private_key1,public_key1,n = start_encrypt(message) 
     
     print("Initial message:")
     print(message)
@@ -142,17 +142,17 @@ if __name__ == '__main__':
     print(public_key1)
 
     print("\n\nDecrypted message using decrypt_with_key:\n")
-    print(decrypt_with_key(coded,public_key1))
+    print(decrypt_with_key(coded,public_key1,n))
 
     message2 = "Hello"
     print("\n\nEncrypting the message 'Hello' using the private key:")
     encrypted_message = encrypt_with_key(message2,private_key1)
     print(encrypted_message)
     print("\n\nDecrypting the message using the public key:")
-    print(decrypt_with_key(encrypted_message,public_key1))
+    print(decrypt_with_key(encrypted_message,public_key1,n))
 
     print("\n\n\n")
     code = [1720, 1872, 541, 5031, 2742, 7540, 4702, 7540, 541, 5437, 2492, 1872, 1872, 541, 1872, 2492, 1720, 7540, 7540, 4577, 5031, 5437, 4577, 4702, 1720, 2492, 4702, 2492, 2492, 1720, 1872, 541]
     key = 5
     print("Decrypting the message using the public key:")
-    print(decrypt_with_key(code,key))
+    print(decrypt_with_key(code,key,n))
